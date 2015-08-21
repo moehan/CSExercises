@@ -32,7 +32,7 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <PropertyGroup>
-    <StartupObject>CSExercises.Ex43</StartupObject>
+    <StartupObject>CSExercises.Ex24</StartupObject>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
@@ -68,7 +68,9 @@
     <Compile Include="Ex21-24\Ex21.cs" />
     <Compile Include="Ex21-24\Ex22.cs" />
     <Compile Include="Ex21-24\Ex23.cs" />
-    <Compile Include="Ex21-24\Ex24.cs" />
+    <Compile Include="Ex21-24\Ex24.cs">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Compile>
     <Compile Include="Ex25-29\Ex25.cs" />
     <Compile Include="Ex25-29\Ex26.cs" />
     <Compile Include="Ex25-29\Ex27.cs" />
