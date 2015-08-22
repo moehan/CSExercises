@@ -19,33 +19,40 @@ namespace CSExercises
 
         public static string Hex(int i)
         {
-            string []h = new string [10];
-            int count=0;
-
-           while (i/16 >16)
+            string []hex=new string[2];
+            int a = i,count=0;
+            string h = "";
+            
+            do
             {
-               switch (i % 16)
+
+                hex[count] = (a % 16).ToString();
+
+                switch (a % 16)
                 {
-                    case 10: h[count] = "A"; break;
-                    case 11: h[count] = "B"; break;
-                    case 12: h[count] = "C"; break;
-                    case 13: h[count] = "D"; break;
-                    case 14: h[count] = "E"; break;
-                    case 15: h[count] = "F"; break;
+                    case 10: hex[count] = "A"; break;
+                    case 11: hex[count] = "B"; break;
+                    case 12: hex[count] = "C"; break;
+                    case 13: hex[count] = "D"; break;
+                    case 14: hex[count] = "E"; break;
+                    case 15: hex[count] = "F"; break;
                 }
-               
-               h[count] = (i % 16).ToString();
-               count++;
-               i = i / 16;
-            }
 
-            String hex = "";
-            for (int b = h.Length - 1; b >= 0; b--)
-            {
-                hex += h[b];
-            }
+                a = a / 16;
+                count++;
+            } while (a / 16 != 0);
 
-            return hex;
+            // now converting the Strig "h" inversely to get the hexadecimal value
+
+            //string hexadecimal = "";
+
+            //for (int b = h.Length; b >= 0; b--)
+            //{
+            //    hexadecimal += h[b];
+            //}
+
+            return h;
+
         }
         
     }
