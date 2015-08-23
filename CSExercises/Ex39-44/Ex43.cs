@@ -19,7 +19,7 @@ namespace CSExercises
 
         public static string Hex(int i)
         {
-            string []hex=new string[2];
+            string []hex=new string[10];
             int a = i,count=0;
             string h = "";
             
@@ -39,17 +39,18 @@ namespace CSExercises
                 }
 
                 a = a / 16;
+                h += hex[count];
                 count++;
             } while (a / 16 != 0);
 
-            // now converting the Strig "h" inversely to get the hexadecimal value
+             //now converting the Strig "h" inversely to get the hexadecimal value
 
-            //string hexadecimal = "";
+            string hexadecimal = "";
 
-            //for (int b = h.Length; b >= 0; b--)
-            //{
-            //    hexadecimal += h[b];
-            //}
+            for (int b = h.Length; b >= 0; b--)
+            {
+                hexadecimal += h[b];
+            }
 
             return h;
 
