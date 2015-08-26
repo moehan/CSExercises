@@ -10,50 +10,48 @@ namespace CSExercises
     {
         public static void Main(string[] args)
         {
-            for (int i = 1; i <= 100; i++)
             {
-                Console.WriteLine(Hex(i));
+                printHexa();
             }
             Console.ReadLine();
         }
 
-        public static string Hex(int i)
+        static void printHexa()
         {
-            string []hex=new string[10];
-            int a = i,count=0;
-            string h = "";
-            
-            do
+            string result = null;
+
+            for (int i = 1; i <= 100; i++)
             {
+                int remain = i % 16;
+                int divi = i / 16;
+                int remain2 = divi % 16;
 
-                hex[count] = (a % 16).ToString();
+                result = remain.ToString();
 
-                switch (a % 16)
+                switch (result)
                 {
-                    case 10: hex[count] = "A"; break;
-                    case 11: hex[count] = "B"; break;
-                    case 12: hex[count] = "C"; break;
-                    case 13: hex[count] = "D"; break;
-                    case 14: hex[count] = "E"; break;
-                    case 15: hex[count] = "F"; break;
+                    case "10":
+                        result = "A";
+                        break;
+                    case "11":
+                        result = "B";
+                        break;
+                    case "12":
+                        result = "C";
+                        break;
+                    case "13":
+                        result = "D";
+                        break;
+                    case "14":
+                        result = "E";
+                        break;
+                    case "15":
+                        result = "F";
+                        break;
                 }
 
-                a = a / 16;
-                h += hex[count];
-                count++;
-            } while (a / 16 != 0);
-
-             //now converting the Strig "h" inversely to get the hexadecimal value
-
-            string hexadecimal = "";
-
-            for (int b = h.Length; b >= 0; b--)
-            {
-                hexadecimal += h[b];
+                Console.WriteLine(remain2 + result);
             }
-
-            return h;
-
         }
         
     }
